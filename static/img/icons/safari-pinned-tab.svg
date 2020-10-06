@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-128 -128 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Custom_Size_1);
+      }
+
+      .cls-2 {
+        fill: #26ffc4;
+      }
+
+      .cls-3 {
+        fill: #2c3e50;
+        font-size: 8px;
+        font-family: Roboto-Regular, Roboto;
+      }
+
+      .cls-4 {
+        filter: url(#H);
+      }
+    </style>
+    <filter id="H" x="-132" y="-131" width="24" height="28" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Custom_Size_1">
+      <rect x="-128" y="-128" width="16" height="16"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" class="cls-1">
+    <g id="untitled" transform="translate(-147 -147)">
+      <path id="Path_1" data-name="Path 1" class="cls-2" d="M36.78,20l6.062,3.5v7L36.78,34l-6.062-3.5v-7Z" transform="translate(-9.78)"/>
+    </g>
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="H-2" data-name="H" class="cls-3" transform="translate(-123 -117)"><tspan x="0" y="0">H</tspan></text>
+    </g>
+  </g>
+</svg>

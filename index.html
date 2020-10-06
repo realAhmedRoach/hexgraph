@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hexgraph</title>
+    <meta name="description" content="A teacher feedback tool that allows you to see what your students feel.">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:description" content="A teacher feedback tool that allows you to see what your students feel."/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Hexgraph"/>
+    <meta property="og:title" content="Hexgraph"/>
+    <meta property="og:image" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/android-chrome-192x192.png"/>
+    <meta property="og:url" content="https://hexgraph.co"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-16x16.png">
+    <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+    <meta name="theme-color" content="#26ffc4">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hexgraph">
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/apple-touch-icon-152x152.png">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <!-- Google Analytics -->
+    <script async>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-107063124-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(css|js)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+
+    <!-- Intercom setup -->
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/epvqmo8t';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      Uh Oh! We couldn't find javascript on your device. Please enable or use a newer browser. Thank You!
+    </noscript>
+    <div id="app"></div>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
